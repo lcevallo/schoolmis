@@ -1,0 +1,17 @@
+models:
+  Classes:
+    name: string
+    relationships:
+      hasMany: Section, Student
+
+  Section:
+    name: string
+    class_id: id foreign
+
+  Student:
+    class_id: id foreign
+    section_id: id foreign
+    name: string
+    email: string unique
+
+seeders: Classes, Section, Student
