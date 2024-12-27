@@ -30,8 +30,8 @@ class Section extends Model
         'class_id' => 'integer',
     ];
 
-    public function class(): BelongsTo
+    public function classes(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Classes::class);
+        return $this->belongsTo(\App\Models\Classes::class,'class_id');
     }
 }

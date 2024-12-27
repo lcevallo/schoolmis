@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Class;
+use App\Models\Classes;
 use App\Models\Section;
 
 class SectionFactory extends Factory
@@ -23,7 +23,7 @@ class SectionFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'class_id' => Class::factory(),
+            'class_id' => Classes::factory(),
         ];
     }
 }

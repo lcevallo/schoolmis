@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Class;
+use App\Models\Classes;
 use App\Models\Section;
 use App\Models\Student;
 
@@ -23,10 +23,10 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'class_id' => Class::factory(),
+            'class_id' => Classes::factory(),
             'section_id' => Section::factory(),
             'name' => $this->faker->name(),
-            'email' => $this->faker->safeEmail(),
+            'email' => $this->faker->unique()->safeEmail,
         ];
     }
 }
