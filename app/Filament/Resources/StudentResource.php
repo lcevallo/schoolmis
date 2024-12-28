@@ -13,6 +13,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -30,6 +31,7 @@ class StudentResource extends Resource
                 TextInput::make('name')
                     ->label('Name')
                     ->placeholder('John Doe')
+                    ->rules(['max:20'])
                     ->required(),
 
                 TextInput::make('email')
@@ -83,7 +85,17 @@ class StudentResource extends Resource
                     ->sortable(),
             ])
             ->filters([
-                //
+                SelectFilter::make('class_id')
+                    ->label('Class')
+                    ->multiple()
+                    ->preload()
+                    ->relationship('class', 'name'),
+
+                SelectFilter::make('section_id')
+                    ->label('Section')
+                    ->multiple()
+                    ->preload()
+                    ->relationship('section', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

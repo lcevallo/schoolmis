@@ -47,6 +47,9 @@ class SectionResource extends Resource
                     ->sortable(),
                 TextColumn::make('classes.name')
                 ->label('Class')
+                ->badge(),
+
+
             ])
             ->filters([
                 //

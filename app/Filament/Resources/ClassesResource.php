@@ -22,6 +22,8 @@ class ClassesResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -38,6 +40,11 @@ class ClassesResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->searchable()
+                    ->sortable(),
+                TextColumn::make('sections.name')
+                  ->badge(),
+                TextColumn::make('students_count')
+                    ->label('Students')
                     ->sortable(),
             ])
             ->filters([
