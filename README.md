@@ -64,5 +64,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
+Visual Studio code y Github
 https://stackoverflow.com/questions/46877667/how-to-add-a-new-project-to-github-using-vs-code
