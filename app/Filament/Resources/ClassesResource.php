@@ -20,8 +20,12 @@ class ClassesResource extends Resource
 {
     protected static ?string $model = Classes::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+    protected static ?string $navigationLabel = 'Class';
+    protected static ?string $navigationGroup = 'Settings';
+
+    protected static ?int $navigationSort = 2;
 
 
     public static function form(Form $form): Form
