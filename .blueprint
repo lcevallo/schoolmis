@@ -1,18 +1,9 @@
 created:
-    - database/factories/ClassesFactory.php
-    - database/factories/SectionFactory.php
-    - database/factories/StudentFactory.php
-    - database/migrations/2024_12_25_133650_create_classes_table.php
-    - database/migrations/2024_12_25_133651_create_sections_table.php
-    - database/migrations/2024_12_25_133652_create_students_table.php
-    - app/Models/Classes.php
-    - app/Models/Section.php
-    - app/Models/Student.php
     - database/seeders/ClassesSeeder.php
     - database/seeders/SectionSeeder.php
     - database/seeders/StudentSeeder.php
 models:
-    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable', current_team_id: 'biginteger nullable', profile_photo_path: 'string:2048 nullable', two_factor_secret: 'text nullable', two_factor_recovery_codes: 'text nullable', two_factor_confirmed_at: 'timestamp nullable' }
+    User: {  }
     Classes: { name: string, relationships: { hasMany: 'Section, Student' } }
-    Section: { name: string, class_id: 'id foreign' }
-    Student: { class_id: 'id foreign', section_id: 'id foreign', name: string, email: 'string unique' }
+    Section: { name: string, relationships: { belongsTo: Classes } }
+    Student: { name: string, email: 'string unique', relationships: { belongsTo: 'Classes, Section' } }

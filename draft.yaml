@@ -6,12 +6,13 @@ models:
 
   Section:
     name: string
-    class_id: id foreign
+    relationships:
+      belongsTo: Classes
 
   Student:
-    class_id: id foreign
-    section_id: id foreign
     name: string
     email: string unique
+    relationships:
+      belongsTo: Classes, Section
 
 seeders: Classes, Section, Student

@@ -12,6 +12,6 @@ class SectionSeeder extends Seeder
      */
     public function run(): void
     {
-        Section::factory()->count(5)->create();
+        Section::factory(10)->create();
     }
 }
