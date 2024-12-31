@@ -1,7 +1,19 @@
 created:
+<<<<<<< HEAD
     - database/seeders/ClassesSeeder.php
     - database/seeders/SectionSeeder.php
     - database/seeders/StudentSeeder.php
+=======
+    - database/factories/ClassesFactory.php
+    - database/factories/SectionFactory.php
+    - database/factories/StudentFactory.php
+    - database/migrations/2024_12_31_121636_create_classes_table.php
+    - database/migrations/2024_12_31_121637_create_sections_table.php
+    - database/migrations/2024_12_31_121638_create_students_table.php
+    - app/Models/Classes.php
+    - app/Models/Section.php
+    - app/Models/Student.php
+>>>>>>> 2f929c2d7ac06be22b18a5a773c5226b634c29d9
 models:
     User: {  }
     Classes: { name: string, relationships: { hasMany: 'Section, Student' } }
