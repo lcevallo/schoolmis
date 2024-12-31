@@ -23,7 +23,7 @@ class SectionFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'class_id' => Classes::factory(),
+            'classes_id' => Classes::factory(),
         ];
     }
 }

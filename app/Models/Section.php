@@ -17,7 +17,7 @@ class Section extends Model
      */
     protected $fillable = [
         'name',
-        'class_id',
+        'classes_id',
     ];
 
     /**
@@ -27,11 +27,11 @@ class Section extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'class_id' => 'integer',
+        'classes_id' => 'integer',
     ];
 
     public function classes(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Classes::class,'class_id');
+        return $this->belongsTo(Classes::class);
     }
 }

@@ -23,10 +23,10 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'class_id' => Classes::factory(),
-            'section_id' => Section::factory(),
             'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => $this->faker->safeEmail(),
+            'classes_id' => Classes::factory(),
+            'section_id' => Section::factory(),
         ];
     }
 }

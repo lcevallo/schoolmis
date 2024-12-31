@@ -16,10 +16,10 @@ class Student extends Model
      * @var array
      */
     protected $fillable = [
-        'class_id',
-        'section_id',
         'name',
         'email',
+        'classes_id',
+        'section_id',
     ];
 
     /**
@@ -29,13 +29,13 @@ class Student extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'class_id' => 'integer',
+        'classes_id' => 'integer',
         'section_id' => 'integer',
     ];
 
-    public function class(): BelongsTo
+    public function classes(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Classes::class);
+        return $this->belongsTo(Classes::class);
     }
 
     public function section(): BelongsTo
